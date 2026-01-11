@@ -1,3 +1,6 @@
+#### Added the ability to create multiple users based on their expected weight range
+
+
 # Bodymiscale
 
 [![GH-release](https://img.shields.io/github/v/release/dckiller51/bodymiscale.svg?style=flat-square)](https://github.com/dckiller51/bodymiscale/releases)
