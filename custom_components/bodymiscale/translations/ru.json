@@ -2,24 +2,29 @@
   "config": {
     "error": {
       "already_configured": "Уже настроено",
-      "height_limit": "Рост слишком большой (макс: 220 см)",
-      "height_low": "Рост слишком низкий (мин: 50 см)",
-      "invalid_date": "Неверная дата"
+      "height_limit": "Слишком большой рост (лимит: 220 см)",
+      "height_low": "Слишком маленький рост (минимум: 50 см)",
+      "invalid_date": "Некорректная дата",
+      "weight_range_invalid": "Максимальный вес должен быть больше минимального."
     },
     "step": {
       "options": {
+        "title": "Настройка сенсоров",
         "data": {
           "height": "Рост",
-          "impedance": "Датчик сопротивления",
-          "last_measurement_time": "Датчик последнего времени взвешивания",
-          "weight": "Датчик веса"
+          "weight_min": "Минимальный вес (кг)",
+          "weight_max": "Максимальный вес (кг)",
+          "impedance": "Сенсор импеданса",
+          "weight": "Сенсор веса"
         },
         "data_description": {
-          "impedance": "Если Ваши весы не измеряют сопротивление, оставьте это поле пустым.",
-          "last_measurement_time": "Если у вас нет датчика последнего времени взвешивания, оставьте это поле пустым."
+          "impedance": "Если ваши весы не измеряют импеданс, оставьте это поле пустым.",
+          "weight_min": "Установите минимальный вес для обработки показаний только для этого пользователя. Оставьте 0, чтобы отключить.",
+          "weight_max": "Установите максимальный вес для обработки показаний только для этого пользователя."
         }
       },
       "user": {
+        "title": "Настройка пользователя",
         "data": {
           "birthday": "Дата рождения",
           "gender": "Пол",
@@ -28,18 +33,39 @@
       }
     }
   },
+  "options": {
+    "error": {
+      "weight_range_invalid": "Максимальный вес должен быть больше минимального."
+    },
+    "step": {
+      "init": {
+        "title": "Настройка сенсоров",
+        "data": {
+          "height": "Рост",
+          "weight_min": "Минимальный вес (кг)",
+          "weight_max": "Максимальный вес (кг)",
+          "impedance": "Сенсор импеданса",
+          "weight": "Сенсор веса"
+        },
+        "data_description": {
+          "impedance": "Если ваши весы не измеряют импеданс, оставьте это поле пустым.",
+          "weight_min": "Установите минимальный вес для обработки показаний только для этого пользователя. Оставьте 0, чтобы отключить.",
+          "weight_max": "Установите максимальный вес для обработки показаний только для этого пользователя."
+        }
+      }
+    }
+  },
   "entity": {
     "sensor": {
-      "basal_metabolism": { "name": "Базальный метаболизм" },
-      "bmi": { "name": "Индекс BMI" },
-      "body_fat": { "name": "Жировая ткань" },
+      "basal_metabolism": { "name": "Базовый метаболизм" },
+      "bmi": { "name": "ИМТ" },
+      "body_fat": { "name": "Телесный жир" },
       "body_score": { "name": "Оценка тела" },
       "bone_mass": { "name": "Костная масса" },
-      "last_measurement_time": { "name": "Последнее время взвешивания" },
       "lean_body_mass": { "name": "Сухая масса тела" },
       "metabolic_age": { "name": "Метаболический возраст" },
       "muscle_mass": { "name": "Мышечная масса" },
-      "protein": { "name": "Белки" },
+      "protein": { "name": "Белок" },
       "visceral_fat": { "name": "Висцеральный жир" },
       "water": { "name": "Вода" },
       "weight": { "name": "Вес" }
@@ -49,46 +75,46 @@
     "_": {
       "name": "bodymiscale",
       "state": {
-        "ok": "OK",
+        "ok": "ОК",
         "problem": "Проблема"
       },
       "state_attributes": {
         "age": { "name": "Возраст" },
-        "basal_metabolism": { "name": "Базальный метаболизм" },
-        "bmi": { "name": "Индекс BMI" },
+        "basal_metabolism": { "name": "Базовый метаболизм" },
+        "bmi": { "name": "ИМТ" },
         "bmi_label": {
-          "name": "Интерпретация BMI",
+          "name": "Оценка ИМТ",
           "state": {
-            "massive_obesity": "Ожирение 3й степени",
-            "moderate_obesity": "Ожирение 1й степени",
-            "normal_or_healthy_weight": "Нормальный вес",
-            "overweight": "Лишний вес",
-            "severe_obesity": "Ожирение 2й степени",
-            "slight_overweight": "Избыточный вес",
-            "unavailable": "недоступен",
+            "massive_obesity": "Выраженное ожирение",
+            "moderate_obesity": "Умеренное ожирение",
+            "normal_or_healthy_weight": "Нормальный или здоровый вес",
+            "overweight": "Избыточный вес",
+            "severe_obesity": "Тяжелое ожирение",
+            "slight_overweight": "Небольшой избыточный вес",
+            "unavailable": "недоступно",
             "underweight": "Недостаточный вес"
           }
         },
-        "body_fat": { "name": "Жировая ткань" },
+        "body_fat": { "name": "Телесный жир" },
         "body_score": { "name": "Оценка тела" },
         "body_type": {
-          "name": "Тип тела",
+          "name": "Тип телосложения",
           "state": {
-            "balanced": "Оптимальный",
-            "balanced_muscular": "Мускулистый",
-            "balanced_skinny": "Худощавый",
+            "balanced": "Сбалансированный",
+            "balanced_muscular": "Сбалансированно-мускулистый",
+            "balanced_skinny": "Сбалансированно-худой",
             "lack_exercise": "Недостаток упражнений",
-            "obese": "Ожирение",
-            "overweight": "Лишний вес",
-            "skinny": "Тощий",
-            "skinny_muscular": "Подтянуто-мускулистый",
-            "thick_set": "Коренастый",
-            "unavailable": "недоступен"
+            "obese": "Склонный к полноте",
+            "overweight": "Избыточный вес",
+            "skinny": "Худощавый",
+            "skinny_muscular": "Худощаво-мускулистый",
+            "thick_set": "Плотный",
+            "unavailable": "недоступно"
           }
         },
         "bone_mass": { "name": "Костная масса" },
-        "fat_mass_to_gain": { "name": "Набираемая жировая масса" },
-        "fat_mass_to_lose": { "name": "Потеря жировой массы" },
+        "fat_mass_to_gain": { "name": "Набрать жировой массы" },
+        "fat_mass_to_lose": { "name": "Сбросить жировой массы" },
         "gender": {
           "name": "Пол",
           "state": {
@@ -99,47 +125,30 @@
         "height": { "name": "Рост" },
         "ideal": { "name": "Идеальный вес" },
         "impedance": { "name": "Импеданс" },
-        "last_measurement_time": { "name": "Последнее время взвешивания" },
         "lean_body_mass": { "name": "Сухая масса тела" },
         "metabolic_age": { "name": "Метаболический возраст" },
         "muscle_mass": { "name": "Мышечная масса" },
         "problem": {
           "name": "Проблема",
           "state": {
-            "impedance_high": "Высокий биоимпеданс",
-            "impedance_low": "Низкий биоимпеданс",
-            "impedance_unavailable": "Биоимпеданс недоступен",
+            "impedance_high": "Высокий импеданс",
+            "impedance_low": "Низкий импеданс",
+            "impedance_unavailable": "Импеданс недоступен",
             "none": "Нет",
-            "weight_high": "Высокий вес",
-            "weight_high_and_impedance_high": "Высокие вес и биоимпеданс",
-            "weight_high_and_impedance_low": "Высокий вес, низкий биоимпеданс",
-            "weight_low": "Низкий вес",
-            "weight_low_and_impedance_high": "Низкий вес, высокий биоимпеданс",
-            "weight_low_and_impedance_low": "Низкие вес и биоимпеданс",
+            "weight_high": "Большой вес",
+            "weight_high_and_impedance_high": "Большой вес, высокий импеданс",
+            "weight_high_and_impedance_low": "Большой вес, низкий импеданс",
+            "weight_low": "Малый вес",
+            "weight_low_and_impedance_high": "Малый вес, высокий импеданс",
+            "weight_low_and_impedance_low": "Малый вес, низкий импеданс",
             "weight_unavailable": "Вес недоступен",
-            "weight_unavailable_and_impedance_unavailable": "Вес и биоимпеданс недоступны"
+            "weight_unavailable_and_impedance_unavailable": "Вес и импеданс недоступны"
           }
         },
-        "protein": { "name": "Белки" },
+        "protein": { "name": "Белок" },
         "visceral_fat": { "name": "Висцеральный жир" },
         "water": { "name": "Вода" },
         "weight": { "name": "Вес" }
-      }
-    }
-  },
-  "options": {
-    "step": {
-      "init": {
-        "data": {
-          "height": "Рост",
-          "impedance": "Датчик сопротивления",
-          "last_measurement_time": "Датчик последнего времени взвешивания",
-          "weight": "Датчик веса"
-        },
-        "data_description": {
-          "impedance": "Если Ваши весы не измеряют сопротивление, оставьте это поле пустым.",
-          "last_measurement_time": "Если у вас нет датчика последнего времени взвешивания, оставьте это поле пустым."
-        }
       }
     }
   },

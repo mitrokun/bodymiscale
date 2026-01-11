@@ -4,26 +4,53 @@
       "already_configured": "Already configured",
       "height_limit": "Height is too high (limit: 220 cm)",
       "height_low": "Height is too low (min : 50 cm)",
-      "invalid_date": "Invalid date"
+      "invalid_date": "Invalid date",
+      "weight_range_invalid": "Maximum weight must be greater than minimum weight."
     },
     "step": {
       "options": {
+        "title": "Configure sensors",
         "data": {
           "height": "Height",
+          "weight_min": "Minimum weight (kg)",
+          "weight_max": "Maximum weight (kg)",
           "impedance": "Impedance sensor",
-          "last_measurement_time": "Last measurement time sensor",
           "weight": "Weight sensor"
         },
         "data_description": {
           "impedance": "If your scale does not provide the impedance, leave this field empty.",
-          "last_measurement_time": "If you do not have a last weigh time sensor, leave this field blank."
+          "weight_min": "Set a minimum weight to only process values for this user. Leave at 0 to disable.",
+          "weight_max": "Set a maximum weight to only process values for this user."
         }
       },
       "user": {
+        "title": "Configure user",
         "data": {
           "birthday": "Birthday",
           "gender": "Gender",
           "name": "Name"
+        }
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "weight_range_invalid": "Maximum weight must be greater than minimum weight."
+    },
+    "step": {
+      "init": {
+        "title": "Configure sensors",
+        "data": {
+          "height": "Height",
+          "weight_min": "Minimum weight (kg)",
+          "weight_max": "Maximum weight (kg)",
+          "impedance": "Impedance sensor",
+          "weight": "Weight sensor"
+        },
+        "data_description": {
+          "impedance": "If your scale does not provide the impedance, leave this field empty.",
+          "weight_min": "Set a minimum weight to only process values for this user. Leave at 0 to disable.",
+          "weight_max": "Set a maximum weight to only process values for this user."
         }
       }
     }
@@ -35,7 +62,6 @@
       "body_fat": { "name": "Body fat" },
       "body_score": { "name": "Body score" },
       "bone_mass": { "name": "Bone mass" },
-      "last_measurement_time": { "name": "Last measurement time" },
       "lean_body_mass": { "name": "Lean body mass" },
       "metabolic_age": { "name": "Metabolic age" },
       "muscle_mass": { "name": "Muscle mass" },
@@ -99,7 +125,6 @@
         "height": { "name": "Height" },
         "ideal": { "name": "Ideal" },
         "impedance": { "name": "Impedance" },
-        "last_measurement_time": { "name": "Last measurement time" },
         "lean_body_mass": { "name": "Lean body mass" },
         "metabolic_age": { "name": "Metabolic age" },
         "muscle_mass": { "name": "Muscle mass" },
@@ -124,22 +149,6 @@
         "visceral_fat": { "name": "Visceral fat" },
         "water": { "name": "Water" },
         "weight": { "name": "Weight" }
-      }
-    }
-  },
-  "options": {
-    "step": {
-      "init": {
-        "data": {
-          "height": "Height",
-          "impedance": "Impedance sensor",
-          "last_measurement_time": "Last measurement time sensor",
-          "weight": "Weight sensor"
-        },
-        "data_description": {
-          "impedance": "If your scale does not provide the impedance, leave this field empty.",
-          "last_measurement_time": "If you do not have a last weigh time sensor, leave this field blank."
-        }
       }
     }
   },

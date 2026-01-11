@@ -2,7 +2,7 @@
 
 from homeassistant.const import Platform
 
-MIN_REQUIRED_HA_VERSION = "2023.9.0"
+MIN_REQUIRED_HA_VERSION = "2025.1.0"
 NAME = "BodyMiScale"
 DOMAIN = "bodymiscale"
 VERSION = "2026.1.0"
@@ -13,9 +13,10 @@ CONF_BIRTHDAY = "birthday"
 CONF_GENDER = "gender"
 CONF_HEIGHT = "height"
 CONF_SENSOR_IMPEDANCE = "impedance"
-CONF_SENSOR_LAST_MEASUREMENT_TIME = "last_measurement_time"
 CONF_SENSOR_WEIGHT = "weight"
 CONF_SCALE = "scale"
+CONF_WEIGHT_MIN = "weight_min"
+CONF_WEIGHT_MAX = "weight_max"
 
 ATTR_AGE = "age"
 ATTR_BMI = "bmi"
